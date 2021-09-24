@@ -62,6 +62,7 @@ async function createReservation(reservation, signal) {
   return await fetchJson(url, options, reservation);
 }
 
+
 /**
  * Creates a new table
  * @returns {Promise<[table]>}
