@@ -17,7 +17,6 @@ function ReservationForm() {
   const [reservation, setReservation] = useState(initialState);
   useEffect(() => {
     async function loadReservationForm({ signal }) {
-      console.log(1);
       if (reservation_id) {
         const reservationFromAPI = await getReservation(reservation_id, signal);
         setReservation(reservationFromAPI);

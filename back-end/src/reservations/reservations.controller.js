@@ -54,7 +54,9 @@ function reservationValidation(req, res, next) {
   if (new Date(`${reservation_date} ${reservation_time}`) < new Date()) {
     next({
       status: 400,
-      message: 'reservation_date must be in the future',
+      message: `Reservation must be in the future. Current date/time is ${new Date()}. Reservation is set to ${new Date(
+        `${reservation_date} ${reservation_time}`
+      )}`,
     });
   }
 
