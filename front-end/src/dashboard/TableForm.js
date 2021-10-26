@@ -60,10 +60,18 @@ function TableForm() {
           />
         </div>
       </div>
-      <button type="submit">Submit</button>
-      <button type="button" onClick={() => history.goBack()}>
-        Cancel
-      </button>
+      <div className="btn-group">
+        <button className="btn btn-primary" type="submit">
+          Submit
+        </button>
+        <button
+          className="btn btn-danger"
+          type="button"
+          onClick={() => history.goBack()}
+        >
+          Cancel
+        </button>
+      </div>
     </form>
   );
 }

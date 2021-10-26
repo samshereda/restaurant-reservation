@@ -79,8 +79,7 @@ function SeatForm() {
             <option value=""> Please choose an option </option>
             {tables.map((table) => {
               if (table.reservation_id) {
-                // eslint-disable-next-line array-callback-return
-                return;
+                return null;
               }
               return (
                 <option key={table.table_id} value={table.table_id}>
@@ -91,10 +90,18 @@ function SeatForm() {
           </select>
         </div>
       </div>
-      <button type="submit">Submit</button>
-      <button type="button" onClick={() => history.goBack()}>
-        Cancel
-      </button>
+      <div className="btn-group">
+        <button className="btn btn-primary" type="submit">
+          Submit
+        </button>
+        <button
+          className="btn btn-danger"
+          type="button"
+          onClick={() => history.goBack()}
+        >
+          Cancel
+        </button>
+      </div>
     </form>
   );
 }

@@ -103,10 +103,11 @@ async function list(req, res) {
     res.json({
       data: await service.search(mobile_number),
     });
+  } else {
+    res.json({
+      data: await service.list(date),
+    });
   }
-  res.json({
-    data: await service.list(date),
-  });
 }
 
 async function create(req, res) {
@@ -117,6 +118,7 @@ async function create(req, res) {
 
 async function update(req, res) {
   await service.update(req.body.data);
+  console.log(await service.read(res.locals.reservation.reservation_id));
   res.status(200).json({
     data: await service.read(res.locals.reservation.reservation_id),
   });
